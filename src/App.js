@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef, useState, Suspense } from 'react'
+import ReactDOM from 'react-dom'
+import { Canvas, useFrame } from '@react-three/fiber'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Physics, usePlane, useBox } from "@react-three/cannon";
+
+import styled from "styled-components";
+
+import "./App.css";
+
+const CanvasContainer = styled.div`
+  width: 100%;
+  height: 100%;
+`
+
+function App(){
+    return <CanvasContainer>
+        <Canvas>
+            <Suspense fallback={null}>
+
+            </Suspense>
+        </Canvas>
+    </CanvasContainer>;
+
+
 }
 
 export default App;
