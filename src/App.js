@@ -12,6 +12,7 @@ import "./App.css";
 const CanvasContainer = styled.div`
   width: 100vw;
   height: 100vh;
+  background-color: black;
 `
 
 function App(){
@@ -33,3 +34,12 @@ function App(){
 }
 
 export default App;
+
+function Box(){
+    return(
+        <mesh>
+            <boxBufferGeometry attach="geometry"/>
+            <meshLambertMaterial attach="material" color="hotpink"/>
+        </mesh>
+    )
+}
