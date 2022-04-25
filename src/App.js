@@ -2,8 +2,10 @@ import React, { useRef, useState, Suspense } from 'react'
 import ReactDOM from 'react-dom'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from "@react-three/drei";
-
+import Cylinder from './Cylinder';
 import { Physics, usePlane, useBox } from "@react-three/cannon";
+
+
 
 import styled from "styled-components";
 
@@ -25,6 +27,7 @@ function App(){
 
                 <Suspense fallback={null}>
                     <Earth/>
+                    <Cylinder/>
                 </Suspense>
             </Canvas>
     </CanvasContainer>
