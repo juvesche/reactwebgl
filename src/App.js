@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from "@react-three/drei";
 import Cylinder from './Cylinder';
+
+
+import Model from './Model'
 import { Physics, usePlane, useBox } from "@react-three/cannon";
 
 
@@ -26,6 +29,7 @@ function App(){
                 <spotLight position={[10, 15, 10]} angle={0.3} />
 
                 <Suspense fallback={null}>
+                    <Model/>
                     <Earth/>
                     <Cylinder/>
                 </Suspense>
