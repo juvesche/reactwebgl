@@ -15,6 +15,7 @@ import styled from "styled-components";
 import "./App.css";
 import {Earth} from "./index";
 import Cross from "./RedCross";
+import Move from "./move";
 
 const CanvasContainer = styled.div`
   width: 100vw;
@@ -51,6 +52,7 @@ function App(){
                     <Earth/>
                     <Cylinder/>
                     <Cross/>
+                    <Move/>
                 </Suspense>
             </Canvas>
     </CanvasContainer>

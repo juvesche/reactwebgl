@@ -8,7 +8,6 @@ import CokeCan from "./texture/red.png";
 function Cross() {
     const myMesh = React.useRef();
     const myMesh2 = React.useRef();
-    const [active, setActive] = useState(false);
     const sideCan = useLoader(TextureLoader, CokeCan);
 
 
