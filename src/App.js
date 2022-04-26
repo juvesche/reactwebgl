@@ -5,18 +5,17 @@ import { OrbitControls } from "@react-three/drei";
 import Cylinder from './Cylinder';
 import { Physics, usePlane, useBox } from "@react-three/cannon";
 import * as THREE from "three";
-import {Canvas, useFrame} from "@react-three/fiber";
 import { useLoader } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 import { DDSLoader } from "three-stdlib";
 
-import React, { useRef, useState, Suspense } from 'react'
 import styled from "styled-components";
 
 import "./App.css";
 import {Earth} from "./index";
+import Cross from "./RedCross";
+import Move from "./move";
 
 const CanvasContainer = styled.div`
   width: 100vw;
@@ -26,10 +25,6 @@ const CanvasContainer = styled.div`
 THREE.DefaultLoadingManager.addHandler(/\.dds$/i, new DDSLoader());
 
 const Scene = () => {
-    const earthRef = useRef();
-    const cloudsRef = useRef();
-
-
     const materials = useLoader(MTLLoader, "untitled.mtl");
     const obj = useLoader(OBJLoader, "untitled.obj", (loader) => {
         materials.preload();
@@ -49,7 +44,7 @@ function App(){
                 <spotLight position={[10, 15, 10]} angle={0.3} />
 
                 <Suspense fallback={null}>
-                    <Model/>
+                    <Scene/>
                     <Earth/>
                     <Cylinder/>
                     <Cross/>
