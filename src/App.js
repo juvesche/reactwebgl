@@ -27,6 +27,21 @@ const CanvasContainer = styled.div`
 `
 THREE.DefaultLoadingManager.addHandler(/\.dds$/i, new DDSLoader());
 
+function Light({ brightness, color }) {
+    return (
+        <rectAreaLight
+            width={3}
+            height={3}
+            color={color}
+            intensity={brightness}
+            position={[-2, 0, 5]}
+            lookAt={[0, 0, 0]}
+            penumbra={100}
+            castShadow
+        />
+    );
+}
+
 const Scene = () => {
     const materials = useLoader(MTLLoader, "untitled.mtl");
     const obj = useLoader(OBJLoader, "untitled.obj", (loader) => {
@@ -39,10 +54,25 @@ const Scene = () => {
 };
 
 
+
+const Scene2 = () => {
+    const materials = useLoader(MTLLoader, "test.mtl");
+    const obj = useLoader(OBJLoader, "test.obj", (loader) => {
+        materials.preload();
+        loader.setMaterials(materials);
+    });
+
+    console.log(obj);
+    return <primitive object={obj} scale={1.5} position={[1, 1,-4]} rotation={[Math.PI / 2, 0, 0]}/>;
+};
+
+
 function App(){
     return (
         <CanvasContainer>
             <Canvas id="three-canvas-container" shadows>
+
+                <Light brightness={10} color={"white"} />
                 <fog attach="fog" color="black" near={1} far={8}/>
                 <ambientLight intensity={0.5} />
                 <spotLight intensity={1.5} position={[30, 30, 50]} angle={0.2} penumbra={1} castShadow />
@@ -62,6 +92,7 @@ function App(){
                 <Suspense fallback={null}>
 
                     <Scene/>
+                    <Scene2/>
                     <Earth/>
                     <Cylinder/>
                     <Cross/>

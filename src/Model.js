@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
     const group = useRef()
-    const { nodes, materials } = useGLTF('texture/untitled.gltf')
+    const { nodes, materials } = useGLTF('/untitled.gltf')
     return (
         <group ref={group} {...props} dispose={null}>
             <mesh castShadow receiveShadow geometry={nodes.Curve007_1.geometry} material={materials['Material.001']} />
@@ -12,4 +12,4 @@ export default function Model(props) {
     )
 }
 
-useGLTF.preload('texture/untitiled.gltf')
+useGLTF.preload('/untitled.gltf')
