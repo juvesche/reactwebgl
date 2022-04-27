@@ -41,7 +41,7 @@ const Scene = () => {
 
 function App(){
     return (
-        <CanvasContainer>z
+        <CanvasContainer>
             <Canvas id="three-canvas-container" shadows>
                 <fog attach="fog" color="black" near={1} far={8}/>
                 <ambientLight intensity={0.5} />
