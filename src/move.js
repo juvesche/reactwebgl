@@ -14,7 +14,7 @@ function Move() {
     i+=0.2;
     return (
         <>
-            <mesh
+            <mesh receiveShadow castShadow
                 position={active ? [i, 0, 0] : [1, 0, i+0.2]}
                 onClick={() => setActive(!active)}
                 ref={myMesh}

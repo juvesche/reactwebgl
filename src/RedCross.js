@@ -19,13 +19,13 @@ function Cross() {
 
     return (
         <>
-            <mesh position={[3, 0, 0]}
+            <mesh receiveShadow castShadow position={[3, 0, 0]}
                   ref={myMesh}>
                 <boxBufferGeometry attach="geometry" args={[.3, .3, 1, 32,1,true]} />
                 <meshStandardMaterial map={sideCan} />
             </mesh>
 
-            <mesh position={[3, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}
+            <mesh receiveShadow castShadow position={[3, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}
                   ref={myMesh2}>
                 <boxBufferGeometry attach="geometry" args={[.3, .3, 1, 32,1,true]} />
                 <meshStandardMaterial map={sideCan} />
