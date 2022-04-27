@@ -23,6 +23,7 @@ const CanvasContainer = styled.div`
   width: 100vw;
   height: 100vh;
 
+  
 `
 THREE.DefaultLoadingManager.addHandler(/\.dds$/i, new DDSLoader());
 
@@ -34,14 +35,15 @@ const Scene = () => {
     });
 
     console.log(obj);
-    return <primitive object={obj} scale={4.0} position={[1, 1, -40]} rotation={[Math.PI / 2, 0, 0]}/>;
+    return <primitive object={obj} scale={1.5} position={[1, 1, -4]} rotation={[Math.PI / 2, 0, 0]}/>;
 };
 
 
 function App(){
     return (
-        <CanvasContainer>
+        <CanvasContainer>z
             <Canvas id="three-canvas-container" shadows>
+                <fog attach="fog" color="black" near={1} far={8}/>
                 <ambientLight intensity={0.5} />
                 <spotLight intensity={1.5} position={[30, 30, 50]} angle={0.2} penumbra={1} castShadow />
                 <directionalLight

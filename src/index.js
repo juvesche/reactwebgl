@@ -26,6 +26,7 @@ root.render(
 reportWebVitals();
 
 export function Earth(props){
+
     const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(TextureLoader,
         [EarthDayMap, EarthNormalMap, EarthSpecularMap, EarthCloudsMap]
     );
