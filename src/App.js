@@ -63,7 +63,7 @@ const Scene2 = () => {
     });
 
     console.log(obj);
-    return <primitive object={obj} scale={1.5} position={[1, 1,-4]} rotation={[Math.PI / 2, 0, 0]}/>;
+    return <primitive object={obj} scale={1.5} position={[4, 1,4]} rotation={[Math.PI / 2, 0, 0]}/>;
 };
 
 
