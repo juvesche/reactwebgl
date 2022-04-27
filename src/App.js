@@ -43,7 +43,7 @@ function App(){
         <CanvasContainer>
             <Canvas id="three-canvas-container" shadows>
                 <ambientLight intensity={0.5} />
-                <spotLight intensity={0.6} position={[30, 30, 50]} angle={0.2} penumbra={1} castShadow />
+                <spotLight intensity={1.5} position={[30, 30, 50]} angle={0.2} penumbra={1} castShadow />
                 <directionalLight
                     castShadow
                     position={[0, 10, 0]}
